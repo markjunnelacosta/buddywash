@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./Login.css";
 import { Copyright } from "@mui/icons-material";
+
 import {
   Grid,
   Paper,
@@ -10,7 +11,7 @@ import {
   TextField,
   FormControlLabel,
   Checkbox,
-  Button,
+  Button, 
   Link,
   CssBaseline,
 } from "@mui/material";
@@ -27,7 +28,7 @@ export const Login = () => {
   return (
     <div id="main-container">
       <div id="left">
-        <img className="machines" src={require("./img-loginpage.png")} />
+        <img className="machines" src={require("./machines.png")} />
       </div>
       <div id="right">
         <Grid
@@ -40,6 +41,7 @@ export const Login = () => {
           elevation={6}
           square
         >
+          
           <Box
             sx={{
               my: 8,
@@ -47,11 +49,11 @@ export const Login = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              justifyContent:"center",
             }}
           >
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
+             <img className="logo" src={require("./logo.png")} />
+            
             <Box
               component="form"
               noValidate
@@ -59,16 +61,18 @@ export const Login = () => {
               sx={{ mt: 1 }}
             >
               <TextField
+              className="input-field"
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
-                name="email"
+                label="UserID"
+                name="userID"
                 autoComplete="email"
                 autoFocus
               />
               <TextField
+                className="input-field"
                 margin="normal"
                 required
                 fullWidth
@@ -79,12 +83,14 @@ export const Login = () => {
                 autoComplete="current-password"
               />
               <Button
+                id="login-button"
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+              
               >
-                Sign In
+                Login
               </Button>
             </Box>
           </Box>
